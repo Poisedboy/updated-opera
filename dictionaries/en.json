@@ -173,6 +173,9 @@
 	},
 	"ContactsPage": {
 		"title": "We are always online",
+		"numberPhoneText": "Phone numbers",
+		"emailText": "Email",
+		"socialNetworksText": "Social networks",
 		"address": "27 Svobody street, Lviv, Lviv region, 79000"
 	},
 	"ParkingPage": {

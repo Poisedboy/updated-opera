@@ -6,25 +6,48 @@ import { FiMail } from "react-icons/fi";
 type ContactsProps = {
 	address: string;
 	title: string;
+	numberPhoneText: string;
+	socialNetworksText: string;
+	emailText: string;
 };
 
-export const Contacts = ({ address, title }: ContactsProps) => {
+export const Contacts = ({
+	address,
+	title,
+	numberPhoneText,
+	socialNetworksText,
+	emailText,
+}: ContactsProps) => {
 	return (
 		<>
 			<Card className="m-10">
-				<CardTitle className="p-5 text-center">{title}</CardTitle>
+				<CardTitle className="p-5 text-center font-thin uppercase">
+					{title}
+				</CardTitle>
 				<hr></hr>
-				<CardContent className="p-5 flex items-center flex-wrap gap-5">
-					<span>Телефони:</span>
-					<a href="tel: +38 063 649 68 86">+38 063 649 68 86</a>
-					<a href="tel: +38 097 826 22 85">+38 097 826 22 85</a>
-					<a href="tel: +38 050 506 05 03">+38 050 506 05 03</a>
-					<a href="mailto: op.aparthotel@gmail.com">
-						<FiMail size={30} />
-					</a>
-					<Link href="https://www.instagram.com/op.apart_hotel/">
-						<BsInstagram size={30} />
-					</Link>
+				<CardContent className="p-5 flex justify-around flex-wrap gap-5">
+					<div>
+						<span>{numberPhoneText}: </span>
+						<div className="flex flex-col">
+							<a href="tel: +38 063 649 68 86">+38 063 649 68 86</a>
+							<a href="tel: +38 097 826 22 85">+38 097 826 22 85</a>
+							<a href="tel: +38 050 506 05 03">+38 050 506 05 03</a>
+						</div>
+					</div>
+					<div className="flex flex-col gap-3">
+						<span className="flex gap-5">
+							{emailText}:{" "}
+							<a href="mailto: op.aparthotel@gmail.com">
+								<FiMail size={30} />
+							</a>
+						</span>
+						<span className="flex gap-3">
+							{socialNetworksText}:{" "}
+							<Link href="https://www.instagram.com/op.apart_hotel/">
+								<BsInstagram size={30} />
+							</Link>
+						</span>
+					</div>
 				</CardContent>
 			</Card>
 			<CardTitle className="text-center mb-10">{address}</CardTitle>

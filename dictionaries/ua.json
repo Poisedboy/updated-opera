@@ -173,6 +173,9 @@
 	},
 	"ContactsPage": {
 		"title": "Ми завжди онлайн",
+		"numberPhoneText": "Номери Телефонів",
+		"emailText": "Електрона пошта",
+		"socialNetworksText": "Соц мережі",
 		"address": "проспект Свободи 27, Львів, Львівська область, 79000"
 	},
 	"ParkingPage": {

@@ -33,7 +33,9 @@ type ParkingProps = {
 const Parking = ({ mapsLinks, title }: ParkingProps) => {
 	return (
 		<div className="min-h-screen px-10 flex flex-col items-center">
-			<h2 className="text-canter m-10">{title}</h2>
+			<h2 className="text-canter uppercase text-2xl font-thin m-5">
+				{title}
+			</h2>
 			<div className="flex flex-wrap justify-center gap-5">
 				{mapsLinks.map((map) => (
 					<Card

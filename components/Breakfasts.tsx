@@ -28,7 +28,9 @@ export const Breakfasts = ({
 	return (
 		<div className="mx-10 mt-10">
 			<Card className="p-10 mb-10 flex items-center justify-center flex-col gap-10">
-				<CardTitle>A la Carte</CardTitle>
+				<CardTitle className="uppercase font-thin">
+					A la Carte
+				</CardTitle>
 				<CardContent>{description}</CardContent>
 			</Card>
 			<div className="pb-10 flex gap-5 flex-wrap justify-center">

@@ -44,7 +44,9 @@ const BreakfastCard = ({
 				<CardTitle className="line-clamp-2">{name}</CardTitle>
 				<CardDescription>
 					<Dialog>
-						<DialogTrigger>{buttonName}</DialogTrigger>
+						<DialogTrigger className="border-[1px] text-black font-medium rounded-md py-2 px-4 hover:bg-gray-100">
+							{buttonName}
+						</DialogTrigger>
 						<DialogContent>
 							<DialogHeader>
 								<DialogTitle className="text-center">
