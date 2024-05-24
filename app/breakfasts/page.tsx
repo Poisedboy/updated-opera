@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import BreakfastCard from "../components/BreakfastCard";
+import BreakfastCard from "../../components/BreakfastCard";
 import { Metadata } from "next";
 
 const breakfasts = [
