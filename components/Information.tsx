@@ -33,16 +33,29 @@ const info = [
 	},
 ];
 
-const Information = () => {
+interface IinfoItem {
+	id: number;
+	picture: string;
+	title: string;
+	text: string;
+}
+
+type InformationProps = {
+	info: IinfoItem[];
+	buttonName: string;
+};
+
+const Information = ({ info, buttonName }: InformationProps) => {
 	return (
 		<>
 			<div className="flex gap-3 flex-wrap justify-center">
 				{info.map((info) => (
 					<CustomCard
+						key={info.id}
 						title={info.title}
 						image={info.picture}
 						text={info.text}
-						key={info.id}
+						buttonName={buttonName}
 					/>
 				))}
 			</div>

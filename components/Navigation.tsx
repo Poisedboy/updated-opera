@@ -4,7 +4,6 @@ import {
 	Navbar,
 	NavbarBrand,
 	NavbarContent,
-	NavbarItem,
 	Link,
 	NavbarMenu,
 	NavbarMenuItem,
@@ -12,18 +11,21 @@ import {
 } from "@nextui-org/react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { usePathname } from "next/navigation";
+import { Locale } from "@/i18n.config";
+import { LocaleSwitcher } from "./LocaleSwitcher";
 
-const links = [
-	{ id: 1, name: "Головна", link: "/" },
-	{ id: 2, name: "Сніданки", link: "/breakfasts" },
-	{ id: 3, name: "Контакти", link: "/contacts" },
-	{ id: 4, name: "Паркінг", link: "/parking" },
-];
+interface ILink {
+	id: number;
+	name: string;
+	link: string;
+}
 
-const Navigation = () => {
+type NavigationProps = { lang: Locale; links: ILink[] };
+
+const Navigation = ({ lang, links }: NavigationProps) => {
 	const path = usePathname();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	console.log("JSS log Navigation :", path);
+
 	return (
 		<Navbar
 			isBordered
@@ -43,12 +45,17 @@ const Navigation = () => {
 				{links.map((link) => (
 					<Link
 						key={link.id}
-						color={path === link.link ? "success" : "foreground"}
+						className={`${
+							path === link.link
+								? "text-blue-600 border-b-[0.5px] border-b-blue-600"
+								: "text-gray-950 dark:text-white"
+						} font-thin`}
 						href={link.link}>
-						{link.name}
+						{link.name.toLocaleUpperCase()}
 					</Link>
 				))}
 				<ThemeSwitcher />
+				<LocaleSwitcher />
 			</NavbarContent>
 			<NavbarMenu>
 				<div className="flex justify-between">
@@ -67,9 +74,10 @@ const Navigation = () => {
 							</NavbarMenuItem>
 						))}
 					</div>
-					<span className="">
+					<div className="flex flex-col gap-5">
 						<ThemeSwitcher />
-					</span>
+						<LocaleSwitcher />
+					</div>
 				</div>
 			</NavbarMenu>
 		</Navbar>

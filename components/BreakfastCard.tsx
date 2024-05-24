@@ -15,26 +15,21 @@ import {
 	DialogTrigger,
 } from "@/components/ui/dialog";
 import { useEffect, useState } from "react";
+import { Button } from "./ui/button";
 
 interface BreakfastProps {
 	name: string;
 	picture: string;
 	ingredients: string;
+	buttonName: string;
 }
 
 const BreakfastCard = ({
 	name,
 	picture,
 	ingredients,
+	buttonName,
 }: BreakfastProps) => {
-	const [isLoading, setLoading] = useState(false);
-	useEffect(() => {
-		if (picture === "") {
-			setLoading(true);
-		} else {
-			setLoading(false);
-		}
-	}, []);
 	return (
 		<Card className="w-[300px]">
 			<img
@@ -45,11 +40,11 @@ const BreakfastCard = ({
 				height={200}
 				className="w-full h-[225px] rounded-md object-cover mb-2"
 			/>
-			<CardContent className="h-[100px] flex flex-col justify-between">
-				<CardTitle>{name}</CardTitle>
+			<CardContent className="h-[120px] flex flex-col justify-between">
+				<CardTitle className="line-clamp-2">{name}</CardTitle>
 				<CardDescription>
 					<Dialog>
-						<DialogTrigger>Інгредієнти</DialogTrigger>
+						<DialogTrigger>{buttonName}</DialogTrigger>
 						<DialogContent>
 							<DialogHeader>
 								<DialogTitle className="text-center">
@@ -62,7 +57,7 @@ const BreakfastCard = ({
 										sizes="100%"
 										className="w-full h-[300px] rounded-md object-cover mb-2"
 									/>
-									{ingredients}
+									{/* {ingredients} */}
 								</DialogDescription>
 							</DialogHeader>
 						</DialogContent>

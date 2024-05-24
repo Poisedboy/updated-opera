@@ -20,10 +20,16 @@ import Image from "next/image";
 interface CardProps {
 	title: string;
 	text: string;
-	image: any;
+	image: string;
+	buttonName: string;
 }
 
-const CustomCard = ({ title, text, image }: CardProps) => {
+const CustomCard = ({
+	title,
+	text,
+	image,
+	buttonName,
+}: CardProps) => {
 	return (
 		<Card className="flex flex-col justify-between my-5 w-[250px]">
 			<img
@@ -37,11 +43,13 @@ const CustomCard = ({ title, text, image }: CardProps) => {
 			<CardFooter>
 				<Dialog>
 					<DialogTrigger asChild>
-						<Button variant="outline">Деталі</Button>
+						<Button variant="outline">{buttonName}</Button>
 					</DialogTrigger>
 					<DialogContent className="sm:max-w-[425px]">
 						<DialogHeader>
-							<DialogTitle>{title}</DialogTitle>
+							<DialogTitle className="text-center">
+								{title}
+							</DialogTitle>
 						</DialogHeader>
 						{text}
 					</DialogContent>
