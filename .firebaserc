@@ -1,5 +1,5 @@
 {
-  "projects": {
-    "default": "opera-firebase"
-  }
+	"projects": {
+		"default": "opera-firebase"
+	}
 }
