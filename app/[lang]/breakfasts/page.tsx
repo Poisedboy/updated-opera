@@ -9,7 +9,9 @@ const BreakfastPage = async ({
 }) => {
 	const { BreakfastsPage } = await getDictionary(lang);
 
-	const description = BreakfastsPage.description;
+	const description = BreakfastsPage.description.split(".");
+	const commonInfo = `${description[0]}.`;
+	const breakfastInfo = `${description[1]}.`;
 	const breakfasts = BreakfastsPage.breakfasts;
 	const childrenBreakfasts = BreakfastsPage.childrenBreakfasts;
 	const buttonName = BreakfastsPage.button;
@@ -18,7 +20,8 @@ const BreakfastPage = async ({
 		<Breakfasts
 			breakfasts={breakfasts}
 			childrenBreakfasts={childrenBreakfasts}
-			description={description}
+			commonInfo={commonInfo}
+			breakfastInfo={breakfastInfo}
 			buttonName={buttonName}
 			childrenMenuTitle={childrenMenuTitle}
 		/>

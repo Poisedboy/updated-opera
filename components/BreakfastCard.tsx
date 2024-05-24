@@ -41,10 +41,12 @@ const BreakfastCard = ({
 				className="w-full h-[225px] rounded-md object-cover mb-2"
 			/>
 			<CardContent className="h-[120px] flex flex-col justify-between">
-				<CardTitle className="line-clamp-2">{name}</CardTitle>
+				<CardTitle className="line-clamp-2 text-base sm:text-xl">
+					{name}
+				</CardTitle>
 				<CardDescription>
 					<Dialog>
-						<DialogTrigger className="border-[1px] text-black font-medium rounded-md py-2 px-4 hover:bg-gray-100">
+						<DialogTrigger className="border-[1px] text-black font-medium rounded-md py-2 px-4 hover:bg-accent dark:text-white">
 							{buttonName}
 						</DialogTrigger>
 						<DialogContent>

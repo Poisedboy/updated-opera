@@ -32,7 +32,9 @@ const Navigation = ({ lang, links }: NavigationProps) => {
 			isMenuOpen={isMenuOpen}
 			onMenuOpenChange={setIsMenuOpen}>
 			<NavbarBrand>
-				<p className="font-bold text-inherit">Opera Passage</p>
+				<p className="font-bold uppercase text-inherit">
+					Opera Passage
+				</p>
 			</NavbarBrand>
 			<NavbarContent className="sm:hidden" justify="end">
 				<NavbarMenuToggle

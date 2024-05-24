@@ -43,7 +43,7 @@
 		]
 	},
 	"BreakfastsPage": {
-		"description": "Breakfasts are being prepared in cafe on 4th floor, from 8:00am till 11:00am",
+		"description": "Breakfasts are being prepared in cafe on 4th floor, from 8:00am till 11:00am. Breakfast includes a juice in assortment and to choose from: black / green tea or espresso, americano / americano with milk, cappuccino, latte, flat white.",
 		"breakfasts": [
 			{
 				"id": 1,
